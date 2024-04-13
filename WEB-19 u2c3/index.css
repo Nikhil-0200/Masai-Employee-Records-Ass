@@ -51,3 +51,7 @@ table > tbody > tr{
     text-align: center;
 }
 
+#filter{
+    text-align: center;
+    margin: 20px 0px;
+}

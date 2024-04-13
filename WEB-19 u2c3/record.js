@@ -1,6 +1,7 @@
 let myForm = document.querySelector("form");
 let arr = [];
 let tbody = document.querySelector("tbody");
+let filterData = document.querySelector("#filter > select");
 
 function handleForm(event){
     event.preventDefault()
@@ -26,9 +27,10 @@ function handleForm(event){
     arr.push(obj)
 
     console.log(arr);
-showData(arr)
 
 event.target.reset()
+
+showData(arr)
 
 }
 
@@ -49,9 +51,11 @@ function findRole(exp){
     }
 }
 
-function showData(){
+
+function showData(data){
     tbody.innerHTML = ""
-    arr.forEach((ele, i)=>{
+
+    data.forEach((ele, i)=>{
         let tRow = document.createElement("tr");
 
 
@@ -63,6 +67,7 @@ function showData(){
         let tMob = document.createElement("td");
         let tRole = document.createElement("td");
         let tDelete = document.createElement("td");
+
 
         tName.textContent = ele.name;
         tEmployeeId.textContent = ele.employeeId;
@@ -79,7 +84,6 @@ function showData(){
             handleDelete(i)
         })
 
-
         tRow.append(tName, tEmployeeId, tDepartment, tExperience, tEmailId, tMob, tRole, tDelete);
         tbody.append(tRow)
     })
@@ -88,5 +92,17 @@ function showData(){
 function handleDelete(index){
     arr.splice(index, 1);
 
-    showData()
+    showData(arr)
 }
+
+filterData.addEventListener("change", ()=>{
+    let selectedValue = filterData.value;
+
+    if(selectedValue === "All"){
+        showData(arr)
+    }
+    else{
+        let filteredArray = arr.filter((ele)=> ele.department === selectedValue)
+        showData(filteredArray)
+    }
+})
