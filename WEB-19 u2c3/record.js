@@ -52,7 +52,7 @@ function findRole(exp){
 }
 
 
-function showData(data){
+export function showData(data){
     tbody.innerHTML = ""
 
     data.forEach((ele, i)=>{
