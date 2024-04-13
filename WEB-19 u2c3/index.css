@@ -1,0 +1,53 @@
+#heading{
+    text-align: center;
+    font-family: "Open Sans";
+    text-decoration: underline;
+    color: blueviolet
+}
+
+#main{
+    display: flex;
+    height: auto;
+    justify-content: space-around;
+}
+
+form{
+    border: 1px solid black;
+    width: 25%;
+    padding: 20px 20px;
+    height: fit-content;
+}
+
+form > input, form > select{
+    width: 90%;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+form > label{
+    padding-bottom: 10px;
+}
+
+form > input:last-child{
+    background-color: rgba(135, 207, 235, 0.909);
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+table {
+    height: fit-content;
+    background-color: black;
+}
+
+table > thead > tr > th{
+    background-color: rgba(135, 207, 235, 0.909);
+    padding: 10px;
+}
+
+table > tbody > tr{
+    border: 1px solid black;
+    background-color: beige;
+    height: 10px;
+    text-align: center;
+}
+
